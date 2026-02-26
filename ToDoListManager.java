@@ -5,7 +5,7 @@ class Task {
     int id;
     String description;
     boolean isDone;
-
+       //constructor
     Task(int id, String description) {
         this.id = id;
         this.description = description;
@@ -17,14 +17,14 @@ class Task {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //overriding the default toString() method from Object with your own version that prints the task in a human‑friendly format.
         return id + ". " + description + " [" + (isDone ? "Done" : "Pending") + "]";
     }
 }
 
 class ToDoList {
     ArrayList<Task> tasks = new ArrayList<>();
-    int nextId = 1;
+    int nextId = 1; //keeps track of the next id
 
     void addTask(String description) {
         tasks.add(new Task(nextId++, description));
@@ -34,7 +34,7 @@ class ToDoList {
     void listTasks() {
         if (tasks.isEmpty()) {
             System.out.println("No tasks available.");
-            return;
+            return; //exit the method
         }
         for (Task t : tasks) {
             System.out.println(t);
@@ -53,7 +53,7 @@ class ToDoList {
     }
 
     void deleteTask(int id) {
-        tasks.removeIf(t -> t.id == id);
+        tasks.removeIf(t -> t.id == id); //Remove any task t from the list if its id equals the given id
         System.out.println("Task deleted successfully!");
     }
 }

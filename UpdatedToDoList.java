@@ -23,7 +23,7 @@ class Work {
 
     @Override
     public String toString() {
-        return id + ". " + description + " [" + (isDone ? "Done" : "Pending") + "]";
+        return id + ". " + description + " [" + (isDone ? "Done" : "Pending") + "]"+"\n";
     }
 
     // Parse a line like "1. Buy groceries [Pending]"
