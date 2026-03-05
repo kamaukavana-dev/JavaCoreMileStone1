@@ -6,18 +6,18 @@ class Work {
     int id;
     String description;
     boolean isDone;
-
+     //constructor
     Work(int id, String description, boolean isDone) {
         this.id = id;
         this.description = description;
         this.isDone = isDone;
     }
-
+    //constructor
     Work(int id, String description) {
         this(id, description, false);
     }
 
-    void markDone() {
+    public void markDone() {
         isDone = true;
     }
 
@@ -103,6 +103,7 @@ class ToDoLists {
     }
 
     void deleteTask(int id) {
+        //lambda
         tasks.removeIf(t -> t.id == id);
         System.out.println("Task deleted successfully!");
     }
